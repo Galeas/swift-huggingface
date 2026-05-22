@@ -1405,6 +1405,7 @@ public extension HubClient {
         }
         let entries =
             allEntries
+            .filter { $0.type == .file }
             .filter { entry in
                 guard !globs.isEmpty else { return true }
                 return globs.contains { glob in
